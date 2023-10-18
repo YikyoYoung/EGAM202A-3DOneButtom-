@@ -15,6 +15,8 @@ public class line : MonoBehaviour {
 
 	public float cameraspeed,temprm;
 
+	public GameManager gameManager;
+
 	public Vector3 offset,tempcrgo;
 
 	private GameObject[] dia,cr;
@@ -155,6 +157,8 @@ public class line : MonoBehaviour {
 			alive = false;
 			mcamera.GetComponent<AudioSource> ().enabled = true;
 			dieeff.SetActive (true);
+			gameManager.gameOver();
+			Debug.Log("Lose!");
 		}// 
 		//when complete the level...
 		if (x.collider.tag == "Finish") 
